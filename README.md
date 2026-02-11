@@ -1,72 +1,21 @@
-# Engineering Assessment
+# SpaceDev
 
-## 📝 Objective
+## ❯❯❯❯ Flow
 
-The goal of this assessment is to evaluate your ability to:
+1. **Server Startup**: Node.js backend initializes on port 3001.
+2. **API Request**: A `curl` command triggers the `/api/erc20-balance` endpoint.
+3. **Smart Contract Interactivity**: The system successfully queries the USDT contract on Ethereum Mainnet.
+4. **Final Result**: The balance and token metadata are returned correctly in the terminal.
 
-Work with Web3 technologies and integrate blockchain functionality into a decentralized application (dApp).
+## ✅ Proof
 
----
+The following screenshot demonstrates the end-to-end flow:
 
-## 📌 Task Instructions
+![GET Result](./test-evidence.jpg)
 
-1. **Create a New API Endpoint**
-
-   - Add a new API endpoint in `index.js` named:
-
-     ```
-     [Name]ApiTest
-     ```
-
-2. **Smart Contract Interaction**
-
-   - Select any **pre-deployed** or **public smart contract** (mainnet or testnet).
-   
-   - Fetch some data (any useful information such as balance, contract state, or public variables).
-   
-   - The logic should fetch data through your new API endpoint.
-
-
-3. **Output**
-
-   - The result should be printed to the console.
-   - No need for complex UI or data persistence 
-   - just demonstrate that the data was fetched successfully.
-
----
-
-## 📤 Submission
-
-Once completed, submit one of the following:
-
-- **short video** recording your work.
-- **screenshots** showing the API call and console result.
-- **Github Link** where your assessment result were pushed.
-
----
-
-## ⏰ Time Expectation
-
-- Estimated time to complete: **30–60 minutes**.
-
----
-
-## ⚙️ Notes
-
-You may use any blockchain provider such as:
-
-  - **ethers.js**
-  - **web3.js**
-  - Any public RPC provider (Infura, Alchemy, QuickNode, etc.)
-  
-Keep your code **clean, simple, and easy to review**.
-
-Handle errors gracefully where possible.
-
----
 ## 🚀 Quick Start Guide
 
-To run the project locally:
+To run and test the project locally:
 
 ```bash
 # Clone the repository (if provided)
@@ -79,4 +28,8 @@ cd [project-folder]
 npm install
 
 # Start the server
-npm start
+npm run dev
+
+# Hit the new API to fetch erc20-contract balance of a wallet (use any contract & account in params)
+curl -s -X GET "http://localhost:3001/api/erc20-balance?contract=0xdAC17F958D2ee523a2206206994597C13D831ec7&account=0xF977814e90dA44bFA03b6295A0616a897441aceC"
+
